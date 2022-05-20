@@ -29,7 +29,7 @@ class ProductController extends AbstractController
         $pagination = $this->paginator->paginate (
             $productEntities,
             $request->query->getInt('page', 1),
-           8
+           9
         );
         return $this->render('product/index.html.twig', [
             'products' => $pagination,

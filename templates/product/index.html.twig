@@ -4,10 +4,11 @@
 
 {% block body %}
     <div class="container">
-        <div class="row">
+    <h1 class="text-center mt-3">Liste des produits</h1>
+        <div class="row mt-3">
            
                 {% for product in products %}
-                <div class="col-4">
+                <div class="col-4 mt-3">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="{{product.imagePath}}" alt="{{product.name}}">
                         <div class="card-body text-center">
@@ -19,5 +20,5 @@
             
         </div>
     </div>
-{{ knp_pagination_render(products, "@KnpPaginator/Pagination/bootstrap_v5_pagination.html.twig") }}
+<div class="d-flex justify-content-center my-3">{{ knp_pagination_render(products, "@KnpPaginator/Pagination/bootstrap_v5_pagination.html.twig") }}</div>
 {% endblock %}
