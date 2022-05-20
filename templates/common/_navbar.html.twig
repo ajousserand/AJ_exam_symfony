@@ -1,0 +1,31 @@
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="row  ">
+        <div class="col-3">
+          <a class="navbar-brand" href="{{path('app_homepage')}}">Le bon coin</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse col-9 " id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{path('app_homepage')}}">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{path('app_product_index')}}">Produits</a>
+            </li>
+            {% if app.user %}
+              <a href="{{path('app_user_index')}}" class="btn btn-warning ms-2">Mes produits</a>
+              <a href="{{path('app_logout')}}" class="btn btn-warning ms-2">Deconnexion</a>
+              <p class="ms-2">Produit désactivé: {{get_desactivated_product_per_user(app.user)}}</p>
+            {% else %}
+              <a href="{{path('app_login')}}" class="btn btn-warning">Connexion</a>
+              <a href="{{path('app_register')}}" class="btn btn-warning">Inscription</a>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>

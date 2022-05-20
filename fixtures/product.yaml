@@ -1,0 +1,12 @@
+parameters:
+  imageType: [https://s1.gaming-cdn.com/images/products/4824/616x353/elden-ring-pc-jeu-steam-europe-cover.jpg,https://media.istockphoto.com/photos/all-you-can-eat-sushi-picture-id1053854126?k=20&m=1053854126&s=612x612&w=0&h=haaqa5FkUXZjz1xvVFvvodNvV8vITqeenXsXOeuYdTU=,https://cdn1.epicgames.com/offer/4966d5da285c4f2c876937844b0e23ee/EGS_RogueLegacy2_CellarDoorGames_S1_2560x1440-7ff70bda4020bdb4668d9d89e9355a0f]
+
+App\Entity\Product:
+  product{0..150}:
+    name (unique): '<word()>'
+    isActive: '<numberBetween(0,1)>'
+    createdAt: '<dateTimeBetween("-1000 days", "now")>'
+    imagePath: '<randomElement($imageType)>'
+    user: '@user*'
+
+

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Acceuil
+{% endblock %}
+
+{% block content %}
+<header>
+    {% block header %}
+    {% include "common/_navbar.html.twig" %}
+    {% endblock %}
+</header>
+    {% block body %}
+    {% endblock %}
+<footer>
+    {% block footer %}
+    {% endblock %}
+</footer>
+{% endblock %}

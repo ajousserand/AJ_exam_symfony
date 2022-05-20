@@ -1,0 +1,16 @@
+# Mot de passe : 1234
+App\Entity\User:
+  user0:
+    email: 'capriatti.tony@gmail.com'
+    password: '\$2y\$13\$DZ.Sc7G9Iz3IKbH0gFWRHudYurSv5DA0lWqgIoP7Cu11A/2xpSP1W'
+    roles: ["ROLE_ADMIN"]
+
+
+  user{1..50}:
+    email (unique): '<email()>'
+    password: '\$2y\$13\$DZ.Sc7G9Iz3IKbH0gFWRHudYurSv5DA0lWqgIoP7Cu11A/2xpSP1W'
+    roles: ["ROLE_USER"]
+    
+
+
+ 
